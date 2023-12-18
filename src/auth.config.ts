@@ -11,13 +11,15 @@ export const authConfig = {
         authorized({ auth, request: { nextUrl } }) {
             const isLoggedIn = !!auth?.user;
             const isOnDashboard = nextUrl.pathname.startsWith('/users');
+            const isOnLoginPage=nextUrl.pathname.startsWith('/auth/login')
             if (isOnDashboard) {
                 if (isLoggedIn) return true;
                 return false; // Redirect unauthenticated users to login page
-                 }
-            // } else if (isLoggedIn) {
-            //     return Response.redirect(new URL('/users', nextUrl));
-            // }
+                 
+            } else if (isLoggedIn) {
+                if(isOnLoginPage){
+                return Response.redirect(new URL('/users', nextUrl));}
+            }
             return true;
         },
         session: async ({ session, token }) => {

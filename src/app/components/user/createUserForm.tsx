@@ -1,4 +1,5 @@
 
+'use client'
 import React from "react";
 import {createAction} from "@/app/serverActions/userActions";
 

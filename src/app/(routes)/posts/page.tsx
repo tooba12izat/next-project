@@ -1,5 +1,4 @@
 import {auth} from "@/auth";
-import AddPostButton from "@/app/components/posts/addPostButton";
 import Posts from "@/app/components/posts/posts";
 import PostForm from "@/app/components/posts/postForm";
 
