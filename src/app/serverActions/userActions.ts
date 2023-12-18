@@ -50,12 +50,15 @@ export const createAction=async (formData:FormData)=>{
         if (existingUser) {
             return ("Email is already in use");
         }
+
         const newUser = new User({
             name,
             email,
             password,
         });
+    
         await newUser.save();
+       
     }
     catch (error) {
         return {

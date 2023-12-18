@@ -4,7 +4,6 @@ import {UserListType, UserProps, userType} from "@/app/types";
 import {connectDb} from "@/db/dbConn";
 import User from "@/db/models/user";
 import SeeFriendsButton from "@/app/components/user/seeFriendsButton";
-import PostsButton from "@/app/components/user/postsButton";
 const usersPerPage = 4;
 
 const getUsers = async (query: string, currentPage: number) => {
@@ -60,7 +59,6 @@ const Table = async ({query, currentPage}: { query: string; currentPage: number;
                             <td className="whitespace-nowrap py-3 pl-6 pr-3">
                                 <div className="flex justify-end gap-3">
                                     <SeeFriendsButton id={idAsString}/>
-                                    <PostsButton id={idAsString}/>
                                     <UpdateUserButton id={idAsString}/>
                                     <DeleteUserButton id={idAsString}/>
 

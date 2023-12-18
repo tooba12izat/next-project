@@ -1,5 +1,5 @@
 import mongoose, { Document, Schema,models } from 'mongoose';
-import {IUser} from "@/db/modelsInterface";
+
 
 const postSchema:Schema = new mongoose.Schema({
     title: { type: String, required: true },

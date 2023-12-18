@@ -2,7 +2,7 @@
 import {TrashIcon} from '@heroicons/react/24/outline'
 import { deleteAction} from "@/app/serverActions/postAction";
 
-const DeletePostButton = ({userId,id}: {userId:string,id:string}) => {
+const DeletePostButton = ({id}: {id:string}) => {
 
     const deleteWithId = deleteAction.bind(null, id);
 

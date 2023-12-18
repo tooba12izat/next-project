@@ -11,7 +11,7 @@ export const GET=async (request: Request, {params}: { params: { id: string } })=
         await connectDb();
         const userr = await User.findById({_id: id});
         const user=userr._id
-        const data:PostsListType[]= await Post.find({user:user}).populate('user')
+        const data:PostsListType[]= await Post.find({}).populate('user')
         if (data) {
             return NextResponse.json({data}, {status: 200,})
         } else {

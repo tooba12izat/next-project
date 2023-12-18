@@ -1,13 +1,13 @@
 "use client"
-import React, {useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
-import {authenticate} from "@/app/serverActions/authAction";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import { authenticate } from "@/app/serverActions/authAction";
 import { useFormState, useFormStatus } from 'react-dom'
 const initialState = {
     message: null,
 }
 
-function SubmitButton() {
+const SubmitButton = () => {
 
     const { pending } = useFormStatus()
 
@@ -15,7 +15,7 @@ function SubmitButton() {
         <button
             type="submit"
             aria-disabled={pending}
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+            className="w-full  bg-teal-700 text-white py-2 rounded hover:bg-blue-600">
             Add
         </button>
     )
@@ -26,10 +26,9 @@ const LoginUserForm = () => {
 
     return (
         <>
-
             <div className="flex min-h-screen flex-col items-center justify-between p-24">
-                <div className="bg-[#212121] p-8 rounded shadow-md w-96">
-                    <h1 className="text-4xl text-center font-semibold mb-8">Login</h1>
+                <div className="bg-gray-100 p-8 rounded shadow-md w-96">
+                    <h1 className="text-4xl text-teal-700 text-center font-semibold mb-8">Login</h1>
                     <form action={formAction}>
 
                         <input
@@ -62,7 +61,7 @@ const LoginUserForm = () => {
             </div>
         </>
 
-)
+    )
 }
 
 export default LoginUserForm;

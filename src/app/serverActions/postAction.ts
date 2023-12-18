@@ -5,7 +5,6 @@ import User from "@/db/models/user";
 import Post from "@/db/models/post";
 
 export const createAction = async (id: string, formData: FormData) => {
-    console.log("entered action")
     await connectDb();
     const title = formData.get('title');
     const content = formData.get('content')
